@@ -1,5 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import authRoutes from "./routes/authRoutes.js"
+import categoryRoutes from "./routes/CommunityFourm.js"
 const app = express();
 
 // Middleware to parse JSON request bodies
@@ -15,7 +17,8 @@ const mongooseConnection = async ()=>{
     }
 }
 mongooseConnection();
-
+app.use("/api/auth", authRoutes);
+app.use(categoryRoutes);
 app.listen(3000,()=>{
     console.log('Server is running on port 3000');
 })
