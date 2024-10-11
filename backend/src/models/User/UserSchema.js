@@ -35,7 +35,15 @@ const UserSchema = new mongoose.Schema(
     AccessToken:{
       type:String,
       unique:true,
-    }
+    },
+    Pets:[
+      {
+         type: mongoose.Schema.Types.ObjectId,
+      ref: "Pet",
+      }
+    ]
+      
+    
   },
   { timestamps: true }
 );

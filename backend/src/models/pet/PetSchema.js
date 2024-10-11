@@ -1,35 +1,35 @@
 import mongoose from "mongoose";
 
 const PetSchema = new mongoose.Schema({
-petName: {
+PetName: {
 type: String,
 required: true,
 trim: true, // Remove whitespace
 },
 
-petType: {
+PetType: {
 type: String,
 required: true,
 enum: ['Dog', 'Cat', 'Bird', 'Fish', 'Reptile', 'Rodent', 'Other'], // Optional: restrict to specific types
 },
 
-breed: {
+Breed: {
 type: String,
 required: true,
 trim: true,
 },
 
-age: {
+Age: {
 type: Number,
 required: true,// Age in years
 },
 
-weight: {
+Weight: {
 type: Number,
 required: true, // Weight in kilograms
 },
 
-picUrl: {
+PicUrl: {
 type: String,
 required: false, // Optional field for pet picture URL
 },
@@ -37,5 +37,4 @@ required: false, // Optional field for pet picture URL
 }, { timestamps: true }); // Automatically add createdAt and updatedAt timestamps
 
 // Create the Pet model
-const Pet = mongoose.model('Pet', PetSchema);
-module.exports = Pet;
+export default mongoose.model('Pet', PetSchema);

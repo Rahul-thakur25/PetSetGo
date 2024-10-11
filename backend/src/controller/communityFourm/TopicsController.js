@@ -23,7 +23,7 @@ const Topic = async (req, res) => {
         }
 
         // Check if a file is uploaded
-        if (!req.file) {
+        if (!req.file){
             return res.status(400).json({
                 message: "No image uploaded",
             });
