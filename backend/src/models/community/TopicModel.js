@@ -13,10 +13,10 @@ const topicSchema = new mongoose.Schema({
     Pics:{
         type: String,
     },
-    Reply:{
+    Reply:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Reply",
-    }
+    }]
 },{
     timestamps:true,
 })

@@ -41,7 +41,7 @@ const replyController = async (req, res) => {
         );
 
         // Check if the topic exists
-        if (!topic) {
+        if (!topic){
             return res.status(404).send({
                 message: 'Topic not found',
             });
