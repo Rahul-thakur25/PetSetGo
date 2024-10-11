@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
+    AccessToken:{
+      type:String,
+      unique:true,
+    }
   },
   { timestamps: true }
 );
