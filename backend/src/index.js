@@ -2,14 +2,18 @@ import express from 'express';
 import mongoose from 'mongoose';
 import authRoutes from "./routes/authRoutes.js"
 import categoryRoutes from "./routes/CommunityFourm.js"
+import dotenv from "dotenv"
 const app = express();
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
+dotenv.config({
+    path: './.env'
+});
 
 const mongooseConnection = async ()=>{
     try{
-       await mongoose.connect('mongodb+srv://rahul:Rahul123@petsetgo.3kfuk.mongodb.net/?retryWrites=true&w=majority&appName=PetSetGo');
+       await mongoose.connect(process.env.MONGO_URL);
         console.log('Connected to MongoDB');
     }
     catch(err){
@@ -19,6 +23,6 @@ const mongooseConnection = async ()=>{
 mongooseConnection();
 app.use("/api/auth", authRoutes);
 app.use(categoryRoutes);
-app.listen(3000,()=>{
-    console.log('Server is running on port 3000');
+app.listen(process.env.PORT,()=>{
+    console.log('Server is running Now');
 })

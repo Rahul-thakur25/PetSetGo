@@ -1,66 +1,6 @@
-// import zod from "zod";
-// import CategoryModel from "../../models/community/CategoryModel.js";
-
-
-// const nameParser = zod.string();
-// const tagParser = zod.string().max(10);
-
-
-// const categoryList = async (req,res)=>{
-//     try {
-//          const {name , tag} = req.body;
-//          const userId = req.params;
-         
-//          const isName = nameParser.safeParse(name);
-//          const isTag = tagParser.safeParse(tag);
-    
-//          if(!isName.success ){
-//              return res.status(400).json({
-//                  message: "Invalid input in name",
-//                  error: isName.error
-//              });
-//          }
-//          if(!isTag.success){
-//              return res.status(400).json({
-//                  message: "Invalid input in tag",
-//                  error: isTag.error
-//              });
-//          }
-
-         
-//         const Category = new CategoryModel({
-//             name,
-//             tag,
-//         });
-//         if(!createdBy){
-//             return res.status(400).json({message: "Invalid user ID"});
-//         }
-//         const category = new CategoryModel({
-//             Name:name,
-//             tags:tag,
-//             createdBy:userId,
-//         });
-        
-//         if(!category){
-//             return res.status(400).json({message: "Invalid input"});
-//         }
-         
-//         await category.save();
-    
-    
-//         res.status(200).json({
-//             message: "Category created successfully",
-//             category
-//         });
-//     } catch (error) {
-//          console.log(error);
-//     }
-// }
-
-// export default categoryList;
-
 import zod from "zod";
 import CategoryModel from "../../models/community/CategoryModel.js";
+import cloudinary from '../../utils/cloudinary.js';  // Ensure .js is included
 
 // Define Zod schema for validation
 const nameParser = zod.string().max(12); // Assuming max length of 12 for name
