@@ -91,6 +91,7 @@ const loginUser = async (req, res) => {
 
     // Generate token
     const token = jwt.sign({ id: user._id }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: process.env.REFRESH_TOKEN_EXPIRY });
+
     if (!token) {
       return res.status(500).json({ message: "Failed to generate token" });
     }

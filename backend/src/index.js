@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import authRoutes from "./routes/authRoutes.js"
-import categoryRoutes from "./routes/CommunityFourm.js"
+import communityRoutes from "./routes/CommunityFourm.js"
+import bodyParser from 'body-parser';
 import dotenv from "dotenv"
 const app = express();
 
@@ -10,6 +11,8 @@ app.use(express.json());
 dotenv.config({
     path: './.env'
 });
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 const mongooseConnection = async ()=>{
     try{
@@ -22,7 +25,7 @@ const mongooseConnection = async ()=>{
 }
 mongooseConnection();
 app.use("/api/auth", authRoutes);
-app.use(categoryRoutes);
+app.use(communityRoutes);
 app.listen(process.env.PORT,()=>{
     console.log('Server is running Now');
 })
