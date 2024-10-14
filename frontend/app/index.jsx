@@ -11,12 +11,14 @@ NativeWindStyleSheet.setOutput({
 const index = () => {
   return (
     <SafeAreaView>
-      <View>
+      <View className="mt-7 mx-8">
         <TouchableOpacity
           className="bg-black p-3 rounded-3xl mb-3"
           onPress={() => router.push("/user/home")}
         >
-          <Text>Click me</Text>
+          <Text className="text-white text-center">
+            Click me to go to /user
+          </Text>
         </TouchableOpacity>
         <Text>index</Text>
       </View>

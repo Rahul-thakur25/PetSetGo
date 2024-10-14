@@ -54,7 +54,7 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Home"
               //   />
-              <Home />
+              <Text className="text-white">Home</Text>
             ),
           }}
         />
@@ -70,7 +70,7 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Bookmark"
               //   />
-              <Community />
+              <Text className="text-white">Community</Text>
             ),
           }}
         />
@@ -86,7 +86,7 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Create"
               //   />
-              <Ecommerce />
+              <Text className="text-white">E commerce</Text>
             ),
           }}
         />
@@ -102,7 +102,7 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Profile"
               //   />
-              <Profile></Profile>
+              <Text className="text-white">Profile</Text>
             ),
           }}
         />
