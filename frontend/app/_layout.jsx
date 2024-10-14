@@ -1,14 +1,14 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { Text, View } from "react-native";
-
-export default function App() {
+import { Stack } from "expo-router";
+import { usePathname } from "expo-router";
+const RootLayout = () => {
+  const pathname = usePathname();
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="bg-red-400 text-3xl">
-        Open up App.js to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="user/" options={{ headerShown: false }} />
+      {/* <Stack.Screen name="" options={{ headerShown: false }} /> */}
+      {/* <Stack.Screen name="search" options={{ headerShown: false }} /> */}
+    </Stack>
   );
-}
+};
+export default RootLayout;
