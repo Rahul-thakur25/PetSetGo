@@ -3,6 +3,7 @@ import { Tabs, Redirect } from "expo-router";
 import Home from "./home";
 import Community from "./community";
 import Ecommerce from "./ecommerce";
+import Profile from "./profile";
 
 const UserLayout = () => {
   //   const TabIcon = ({ icon, color, focused, name }) => {
@@ -42,7 +43,7 @@ const UserLayout = () => {
         }}
       >
         <Tabs.Screen
-          name="home"
+          name="home/index"
           options={{
             title: "Home",
             headerShown: false,
@@ -58,7 +59,7 @@ const UserLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="community"
+          name="community/index"
           options={{
             title: "Community",
             headerShown: false,
@@ -74,7 +75,7 @@ const UserLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="ecommerce"
+          name="ecommerce/index"
           options={{
             title: "E-Commerce",
             headerShown: false,
@@ -90,7 +91,7 @@ const UserLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="profile"
+          name="profile/index"
           options={{
             title: "Profile",
             headerShown: false,
