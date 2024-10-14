@@ -3,6 +3,7 @@ import { Tabs, Redirect } from "expo-router";
 import Home from "./home";
 import Community from "./community";
 import Ecommerce from "./ecommerce";
+import Profile from "./profile";
 
 const UserLayout = () => {
   //   const TabIcon = ({ icon, color, focused, name }) => {
@@ -42,7 +43,7 @@ const UserLayout = () => {
         }}
       >
         <Tabs.Screen
-          name="home"
+          name="home/index"
           options={{
             title: "Home",
             headerShown: false,
@@ -53,12 +54,12 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Home"
               //   />
-              <Home />
+              <Text className="text-white">Home</Text>
             ),
           }}
         />
         <Tabs.Screen
-          name="community"
+          name="community/index"
           options={{
             title: "Community",
             headerShown: false,
@@ -69,12 +70,12 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Bookmark"
               //   />
-              <Community />
+              <Text className="text-white">Community</Text>
             ),
           }}
         />
         <Tabs.Screen
-          name="ecommerce"
+          name="ecommerce/index"
           options={{
             title: "E-Commerce",
             headerShown: false,
@@ -85,12 +86,12 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Create"
               //   />
-              <Ecommerce />
+              <Text className="text-white">E commerce</Text>
             ),
           }}
         />
         <Tabs.Screen
-          name="profile"
+          name="profile/index"
           options={{
             title: "Profile",
             headerShown: false,
@@ -101,7 +102,7 @@ const UserLayout = () => {
               //     focused={focused}
               //     name="Profile"
               //   />
-              <Profile></Profile>
+              <Text className="text-white">Profile</Text>
             ),
           }}
         />
