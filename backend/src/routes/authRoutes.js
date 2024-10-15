@@ -1,11 +1,15 @@
 import express from 'express';
-import {loginUser, registerUser} from "../controller/AuthController.js";
+import {loginUser, registerUser, logoutUser} from "../controller/AuthController.js";
+import  verifyJwt  from '../middlewares/verifyJwtMiddleware.js';
 
 
 const router = express.Router();
 
 
 router.post('/login', loginUser);
+
+
+router.post('/logout',verifyJwt, logoutUser);
 
 router.post('/register', registerUser);
 /*
