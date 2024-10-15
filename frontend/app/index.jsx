@@ -19,13 +19,13 @@ NativeWindStyleSheet.setOutput({
 
 const { width, height } = Dimensions.get("window");
 
-const COLORS = { primary: "#282534", white: "#fff" };
+const COLORS = { primary: "#161622", white: "#fff" };
 
 const slides = [
   {
     id: "1",
-    // image: require('../images/image1.png'),
-    title: "Best Digital Solution",
+    image: require('../assets/icons/dogoLogo.png'),
+    title: "Welcome to the ",
     subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -120,7 +120,7 @@ const Index = ({ navigation }) => {
             <View style={{ height: 50 }}>
               <TouchableOpacity
                 style={styles.btn}
-                onPress={() => router.replace("./auth/signup")}
+                onPress={() => router.push("./auth/signup")}
               >
                 <Text style={{ fontWeight: "bold", fontSize: 15 }}>
                   GET STARTED
@@ -187,6 +187,7 @@ const Index = ({ navigation }) => {
         renderItem={({ item }) => <Slide item={item} />}
       />
       <Footer />
+      <StatusBar backgroundColor='#161622' style='light'/>
     </SafeAreaView>
   );
 };
