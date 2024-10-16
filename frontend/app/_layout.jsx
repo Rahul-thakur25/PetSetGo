@@ -3,6 +3,7 @@ import { Stack,SplashScreen } from "expo-router";
 import { usePathname } from "expo-router";
 import {useFonts} from 'expo-font'
 import { useEffect } from "react";
+import { StatusBar } from "react-native";
 
 const RootLayout = () => {
   const [fontsLoaded, error] = useFonts({
@@ -35,11 +36,15 @@ const RootLayout = () => {
         name="user"
         options={{ headerShown: isUserPath ? false : true }}
       />
+      {/* <Stack.Screen name="user/home" options={{ headerShown: false }} /> */}
       <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/login" options={{ headerShown: false }} />
       {/* <Stack.Screen name="user/home/index" options={{ headerShown: false }} /> */}
       {/* <Stack.Screen name="" options={{ headerShown: false }} /> */}
       {/* <Stack.Screen name="search" options={{ headerShown: false }} /> */}
+    
     </Stack>
+    
   );
 };
 export default RootLayout;
