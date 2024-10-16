@@ -1,6 +1,6 @@
 import zod from 'zod';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken'; // Make sure this is imported
+import jwt from 'jsonwebtoken'; 
 import User from "../models/User/UserSchema.js";
 
 // Parsers
@@ -63,7 +63,7 @@ const registerUser = async (req, res) => {
     return res.status(201).json({ msg: "User registered successfully" });
   } catch (error) {
     console.error("Error during registration:", error);
-    return res.status(500).json({ errors: [{ msg: "Server error" }] });
+    return res.status(500).json({ errors: [{ msg: "Sorry it's Server error" }] });
   }
 };
 
