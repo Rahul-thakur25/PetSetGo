@@ -13,7 +13,6 @@ const usernameParser = zod.string();
 const registerUser = async (req, res) => {
   try {
     const { email, password, name, phoneNo, userName } = req.body;
-
     // Zod validation
     const isEmail = emailParser.safeParse(email);
     const isPassword = passwordParser.safeParse(password);
@@ -37,16 +36,13 @@ const registerUser = async (req, res) => {
     if (!isUsername.success) {
       return res.status(400).json({ errors: [{ field: "userName", msg: "Username is required" }] });
     }
-
     // Check if user already exists
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ errors: [{ msg: "User already exists" }] });
     }
-
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
-
     // Create new user
     const newUser = new User({
       email,
@@ -55,10 +51,8 @@ const registerUser = async (req, res) => {
       phoneNo,
       userName,
     });
-
     // Save the user to the database
     await newUser.save();
-
     // Return success response
     return res.status(201).json({ msg: "User registered successfully" });
   } catch (error) {

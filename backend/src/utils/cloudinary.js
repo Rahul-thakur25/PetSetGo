@@ -3,7 +3,7 @@ import fs from 'fs';  // Add the fs import
 import dotenv from "dotenv"
 
 dotenv.config({
-    path: "./.env"  // Add the path to your .env file
+    path: "../.env"  // Add the path to your .env file
 });
 cloudinary.config({ 
     cloud_name: process.env.CLOUDINARY_API_NAME,
