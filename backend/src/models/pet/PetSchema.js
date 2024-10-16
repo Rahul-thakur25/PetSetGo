@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { optional } from "zod";
 
 const PetSchema = new mongoose.Schema({
 PetName: {
@@ -28,7 +29,11 @@ Weight: {
 type: Number,
 required: true, // Weight in kilograms
 },
-
+AvailableForBreedig: {
+    type : Boolean,
+    default: false,
+    required: optional,
+},
 Gender:{
     type: String,
     required: true,
