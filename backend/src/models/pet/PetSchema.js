@@ -29,11 +29,20 @@ type: Number,
 required: true, // Weight in kilograms
 },
 
+Gender:{
+    type: String,
+    required: true,
+},
+
 PicUrl: {
 type: String,
 required: false, // Optional field for pet picture URL
 },
 
+Prescription:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Medical'
+}]
 }, { timestamps: true }); // Automatically add createdAt and updatedAt timestamps
 
 // Create the Pet model

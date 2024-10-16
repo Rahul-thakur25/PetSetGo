@@ -2,9 +2,14 @@ import express from 'express';
 import mongoose from 'mongoose';
 import authRoutes from "./routes/authRoutes.js"
 import communityRoutes from "./routes/CommunityFourm.js"
+import MedRouter from "./routes/MedRouter.js"
 import petRoutes from "./routes/petRoutes.js"
+import petMateRoutes from "./routes/petMateRoutes.js"
+import VetArticleRoute from "./routes/VetArticleRoute.js"
 import bodyParser from 'body-parser';
-import dotenv from "dotenv"
+import dotenv from "dotenv";
+
+
 const app = express();
 
 // Middleware to parse JSON request bodies
@@ -29,6 +34,9 @@ mongooseConnection();
 app.use("/api/auth", authRoutes);
 app.use(communityRoutes);
 app.use(petRoutes);
+app.use(MedRouter);
+app.use(VetArticleRoute);
+app.use(petMateRoutes);
 app.listen(process.env.PORT,()=>{
     console.log('Server is running Now');
 })

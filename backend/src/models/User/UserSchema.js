@@ -25,28 +25,26 @@ const UserSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
-
     phoneNo: {
       type: String,
       required: true,
       unique: true,
       trim: true,
     },
-    AccessToken:{
-      type:String,
-      unique:true,
+    AccessToken: {
+      type: String,
+      default: null,      // Default value is null
+      sparse: true,       // Allows multiple null values
     },
-    Pets:[
+    Pets: [
       {
-         type: mongoose.Schema.Types.ObjectId,
-      ref: "Pet",
-      }
-    ]
-      
-    
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Pet",
+      },
+    ],
   },
   { timestamps: true }
 );
 
-//Create the User model
+// Create the User model
 export default mongoose.model("User", UserSchema);
