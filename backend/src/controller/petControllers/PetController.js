@@ -90,7 +90,7 @@ import User from "../../models/User/UserSchema.js";
 const nameParser = zod.string();
 const typeParser = zod.enum(['Dog', 'Cat', 'Bird', 'Fish', 'Reptile', 'Rodent', 'Other']);
 const breedParser = zod.string();
-const ageParser = zod.number().max(99, { message: "Age must be 99 or below." });
+const ageParser = zod.number().min(0).max(99, { message: "Age must be 99 or below." });
 const weightParser = zod.number();
 const genderParser = zod.enum(['Male', 'Female']);
 
@@ -129,7 +129,7 @@ const petController = async (req, res) => {
     if (!isGender.success) {
         return res.status(400).json({ field: "gender", msg: "Invalid gender. Must be 'Male' or 'Female'" });
     }
-
+    
     // Check for uploaded file
     if (!req.file) {
         return res.status(400).json({ message: "No image uploaded" });

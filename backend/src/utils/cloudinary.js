@@ -2,7 +2,9 @@ import {v2 as cloudinary} from "cloudinary";
 import fs from 'fs';  // Add the fs import
 import dotenv from "dotenv"
 
-dotenv.config();
+dotenv.config({
+    path: "../.env"  // Add the path to your .env file
+});
 cloudinary.config({ 
     cloud_name: process.env.CLOUDINARY_API_NAME,
     api_key: process.env.CLOUDINARY_API_KEY, 
@@ -24,4 +26,4 @@ const uploadOnCloudinary = async(localFilePath)=>{
     }
 }
 
-export default uploadOnCloudinary
+export default uploadOnCloudinary;
