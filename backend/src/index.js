@@ -15,7 +15,7 @@ const app = express();
 // Middleware to parse JSON request bodies
 app.use(express.json());
 dotenv.config({
-    path: './.env'
+    path: '../.env'
 });
 app.use(bodyParser.urlencoded({ extended: true }));
 
