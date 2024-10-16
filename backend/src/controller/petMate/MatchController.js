@@ -60,7 +60,6 @@ const matchController = async (req, res) => {
             updatedBreedingStatus,
             updatedMatchedStatus : updateMatched
         })
-
 }
 
 export default matchController;

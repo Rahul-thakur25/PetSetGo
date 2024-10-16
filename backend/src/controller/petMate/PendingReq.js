@@ -1,7 +1,6 @@
 import zod from 'zod';
 import Breeding from "../../models/petMate/BreedingSchema.js";
 import User from "../../models/User/UserSchema.js";
-import Pet from "../../models/pet/PetSchema.js"; // Assuming you have a Pet model
 
 const idParser = zod.string();
 
