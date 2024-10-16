@@ -12,14 +12,13 @@ const BreedingController = async (req, res) => {
     const isReqPetId = petIdParser.safeParse(reqPetId);
     const isResPetId = petIdParser.safeParse(resPetId);
 
-    if (!isReqPetId.success || !isResPetId.success) {
+    if (!isReqPetId.success || !isResPetId.success){
         return res.status(400).json({
             message: "Invalid pet ID",
             error: isReqPetId.error || isResPetId.error,
         });
     }
-
-    try {
+    try{
         // Create a new breeding request
         const breedingRequest = new Breeding({
             requesterPet: reqPetId,
@@ -31,7 +30,7 @@ const BreedingController = async (req, res) => {
 
         return res.status(200).json({
             message: "Breeding Request Created Successfully",
-            breeding: breedingRequest,
+            breedingRequest,
         });
     } catch (error) {
         console.error("Error saving breeding request:", error);

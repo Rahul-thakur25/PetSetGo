@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 const BreedMatchSchema = new mongoose.Schema({
     pet1: {
         type: mongoose.Schema.Types.ObjectId,
