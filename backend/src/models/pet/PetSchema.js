@@ -29,7 +29,7 @@ Weight: {
 type: Number,
 required: true, // Weight in kilograms
 },
-AvailableForBreedig: {
+AvailableForBreeding: {
     type : Boolean,
     default: false,
     required: optional,

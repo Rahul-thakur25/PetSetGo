@@ -11,15 +11,12 @@ import dotenv from "dotenv";
 
 
 const app = express();
-
 // Middleware to parse JSON request bodies
 app.use(express.json());
 dotenv.config({
     path: './.env'
 });
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 const mongooseConnection = async ()=>{
     try{
        await mongoose.connect(process.env.MONGO_URL);
@@ -30,7 +27,6 @@ const mongooseConnection = async ()=>{
     }
 }
 mongooseConnection();
-
 app.use("/api/auth", authRoutes);
 app.use(communityRoutes);
 app.use(petRoutes);
@@ -39,4 +35,4 @@ app.use(VetArticleRoute);
 app.use(petMateRoutes);
 app.listen(process.env.PORT,()=>{
     console.log('Server is running Now');
-})
+});
