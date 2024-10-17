@@ -6,8 +6,8 @@ import {upload} from "../middlewares/multer.middleware.js"
 
 const router = express.Router();
 
-router.post("/:userId/createCategory", CategoryController);
-router.post("/:categoryId/topics",upload.single('file'),TopicController);
-router.post("/:userId/:topicId/reply", replyController )
+router.post("/:userId/createCategory",upload.single('file'), CategoryController);
+router.post("/:userId/:categoryId/topics",upload.single('file'),TopicController);
+router.post("/:userId/:topicId/reply", replyController);
 
 export default router;

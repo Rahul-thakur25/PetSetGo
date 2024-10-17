@@ -18,6 +18,9 @@ const categorySchema = new mongoose.Schema({
     topics:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Topic",
+    },
+    picUrl:{
+        type: String
     }
 },{
     timestamps: true,
