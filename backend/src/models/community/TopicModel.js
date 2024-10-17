@@ -16,7 +16,12 @@ const topicSchema = new mongoose.Schema({
     Reply:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Reply",
-    }]
+    }],
+    User: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    }
 },{
     timestamps:true,
 })
